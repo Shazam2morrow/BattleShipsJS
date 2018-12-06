@@ -2,11 +2,11 @@
 /* Init function */
 window.onload = function() {
     var fireButton        = $("fireButton");
-	fireButton.onclick    = handleFireButton;
-	var guessInput        = $("guessInput");
-	guessInput.onkeypress = handleKeyPress;
+    fireButton.onclick    = handleFireButton;
+    var guessInput        = $("guessInput");
+    guessInput.onkeypress = handleKeyPress;
 
-	model.generateShipLocations();
+    model.generateShipLocations();
 }
 
 function handleFireButton() {
@@ -107,9 +107,9 @@ var model = {
 		var locations;
 
 		for (var i = 0; i < this.numShips; i++) {
-            do {
-				 locations = this.generateShip();
-			} while (this.collision(locations));
+                do {
+		  locations = this.generateShip();
+		} while (this.collision(locations));
 
             this.ships[i].locations = locations;
 		}
@@ -118,7 +118,7 @@ var model = {
 	generateShip: function() {
 		var direction = Math.floor(Math.random() * 2);
 		var row;
-        var col;
+                var col;
 
 		if (direction === 1) { // horizontal
 			row = Math.floor(Math.random() * this.boardSize);
